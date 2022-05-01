@@ -76,7 +76,7 @@
                     <ColumnDefinition Width="auto"/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-                <TextBlock Grid.Column="0" Text="Quantity" Margin="10 0 15 0" VerticalAlignment="Center"/>
+                <TextBlock Grid.Column="0" Text="Quantity" Margin="10 0 10 0" VerticalAlignment="Center"/>
                 <TextBox Grid.Column="1"/>
             </Grid> 
             
