@@ -5,8 +5,118 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPF_CakeOrderForm"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="600" Width="850">
+    <Window.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="Gadugi"/>
+            <Setter Property="FontWeight" Value="Light"/>
+            <Setter Property="TextWrapping" Value="Wrap"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Margin" Value="100 5 0 0"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Margin" Value="10"/>
+        </Style>
+        <Style TargetType="CheckBox">
+            <Setter Property="Margin" Value="8"/>
+            <Setter Property="BorderThickness" Value="0"/>
+        </Style>
+
+        <ControlTemplate TargetType="TextBox" x:Key="Content">
+            
+        </ControlTemplate>
+    </Window.Resources>
+
+    <!-- Main Grid -->
     <Grid>
-        
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0.5,1" EndPoint="1,0">
+                <GradientStop Color="#099cca" Offset="0"/>
+                <GradientStop Color="#05fcc6" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="160"/>
+            <RowDefinition Height="200"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="520"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Grid.Row="0" Text="CAKE ORDER FORM" FontSize="30" VerticalAlignment="Bottom"/>
+        <TextBlock Grid.Row="1" Text="Please fill in your information and we'll be sending your order in no time." FontSize="14"/>
+
+        <!-- UserInfo Grid -->
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition/>
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Row="0" Grid.Column="0" Text="Name" />
+            <TextBlock Grid.Row="1" Grid.Column="0" Text="Email"/>
+            <TextBlock Grid.Row="2" Grid.Column="0" Text="Shipping Address"/>
+            
+            <Grid Grid.Row="1" Grid.Column="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" Text="Quantity" Margin="10 0 15 0" VerticalAlignment="Center"/>
+                <TextBox Grid.Column="1"/>
+            </Grid> 
+            
+            <TextBox Grid.Row="0" Grid.Column="1"/>
+            <TextBox Grid.Row="0" Grid.Column="2"/>
+            <TextBox Grid.Row="1" Grid.Column="1"/>
+            <TextBox Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2"/>
+            <TextBox Grid.Row="3" Grid.Column="1"/>
+            <TextBox Grid.Row="3" Grid.Column="2"/>
+        </Grid>
+
+        <!-- Cake Changer Grid -->
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            
+            <TextBlock Grid.Row="0" Grid.Column="0" Text="Select your products" VerticalAlignment="Top"/>
+            <CheckBox Grid.Row="0" Grid.Column="1">
+                <Image Source="Resources/1.png"/>
+            </CheckBox>
+            <CheckBox Grid.Row="0" Grid.Column="2">
+                <Image Source="Resources/2.png"/>
+            </CheckBox>
+            <CheckBox Grid.Row="1" Grid.Column="1">
+                <Image Source="Resources/3.png"/>
+            </CheckBox>
+            <CheckBox Grid.Row="1" Grid.Column="2">
+                <Image Source="Resources/4.png"/>
+            </CheckBox>
+        </Grid>
+        <Button Grid.Column="0" Grid.Row="4" Margin="100 20 320 00"
+                Background="#16718f" Foreground="White" BorderThickness="0"
+                Content="PURCHASE"
+                FontFamily="Gadugi" FontWeight="Bold"/>
     </Grid>
 </Window>
